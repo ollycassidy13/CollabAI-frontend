@@ -1,0 +1,89 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.my-display2 {
+    font-size: 2.5rem; 
+    font-weight: 300; 
+    line-height: 1.2; 
+    color: #dfc117; 
+    margin-bottom: 1rem; 
+    text-align: center;
+}
+
+#background-index {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('ai-logo.jpg') no-repeat center center fixed; 
+    background-size: cover;
+}
+
+#background, #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#background {
+    background: url('ai-logo.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    filter: blur(10px); 
+    -webkit-filter: blur(10px); 
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.35); 
+}
+
+.title-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; 
+}
+
+.fade-in-title {
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    font-size: 100px;
+    font-family: 'Roboto', sans-serif; 
+    color: rgb(1, 111, 255);
+    text-shadow: 
+        -1px -1px 0 #fff,  
+        1px -1px 0 #fff,  
+        -1px 1px 0 #fff,  
+        1px 1px 0 #fff;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 100vh; 
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8); 
+}
+
+.content-container > * {
+    margin-bottom: 1rem; 
+}

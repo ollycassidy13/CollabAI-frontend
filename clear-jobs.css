@@ -1,0 +1,14 @@
+#clear-jobs-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#clear-jobs-button:hover {
+    background-color: #ff1a1a;
+}
