@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    displayJobs();
+    console.log('Document loaded. Displaying jobs.');
+    setTimeout(displayJobs, 100); // Add a delay to check for timing issues
 });
 
 function createJob() {
@@ -9,6 +10,8 @@ function createJob() {
 function displayJobs() {
     const jobContainer = document.querySelector('.job-container');
     const jobs = getJobs();
+
+    console.log('Displaying jobs:', jobs);
 
     jobs.forEach(job => {
         const jobCard = document.createElement('div');
@@ -25,11 +28,16 @@ function displayJobs() {
 }
 
 function getJobs() {
-    return JSON.parse(localStorage.getItem('jobs')) || [];
+    const rawJobs = localStorage.getItem('jobs');
+    console.log('Raw jobs from local storage:', rawJobs);
+    const jobs = JSON.parse(rawJobs) || [];
+    console.log('Parsed jobs from local storage:', jobs);
+    return jobs;
 }
 
 function saveJob(job) {
     const jobs = getJobs();
     jobs.push(job);
     localStorage.setItem('jobs', JSON.stringify(jobs));
+    console.log('Saved job to local storage:', job);
 }

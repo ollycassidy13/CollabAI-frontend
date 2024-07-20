@@ -5,10 +5,16 @@ function updateProgressBar() {
     const progressBar = document.getElementById('progress-bar');
     progressBar.style.width = progress + '%';
     progressBar.textContent = progress + '%';
+    
+    saveProgress(progress);
 
     if (progress < 100) {
-        setTimeout(updateProgressBar, 10000); 
+        setTimeout(updateProgressBar, 5000);
     }
+}
+
+function saveProgress(progress) {
+    localStorage.setItem('progress', progress);
 }
 
 function returnHome() {
@@ -16,4 +22,4 @@ function returnHome() {
 }
 
 // Start updating the progress bar
-setTimeout(updateProgressBar, 10000); 
+setTimeout(updateProgressBar, 5000); 
