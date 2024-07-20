@@ -1,20 +1,29 @@
-let progress = 0;
+// Retrieve the last saved job and update its progress
+let jobs = getJobs();
+let lastJobIndex = jobs.length - 1;
+let progress = jobs[lastJobIndex].completion;
 
 function updateProgressBar() {
     progress += 1;
     const progressBar = document.getElementById('progress-bar');
     progressBar.style.width = progress + '%';
     progressBar.textContent = progress + '%';
-    
-    saveProgress(progress);
+
+    // Update job completion in local storage
+    jobs[lastJobIndex].completion = progress;
+    saveJobs(jobs);
 
     if (progress < 100) {
-        setTimeout(updateProgressBar, 5000);
+        setTimeout(updateProgressBar, 1000); 
     }
 }
 
-function saveProgress(progress) {
-    localStorage.setItem('progress', progress);
+function saveJobs(jobs) {
+    localStorage.setItem('jobs', JSON.stringify(jobs));
+}
+
+function getJobs() {
+    return JSON.parse(localStorage.getItem('jobs')) || [];
 }
 
 function returnHome() {
@@ -22,4 +31,4 @@ function returnHome() {
 }
 
 // Start updating the progress bar
-setTimeout(updateProgressBar, 5000); 
+setTimeout(updateProgressBar, 1000); 
