@@ -14,7 +14,7 @@ function updateProgressBar() {
     saveJobs(jobs);
 
     if (progress < 100) {
-        setTimeout(updateProgressBar, 1000); 
+        setTimeout(updateProgressBar, 3000); 
     }
 }
 
@@ -31,4 +31,4 @@ function returnHome() {
 }
 
 // Start updating the progress bar
-setTimeout(updateProgressBar, 1000); 
+setTimeout(updateProgressBar, 3000); 

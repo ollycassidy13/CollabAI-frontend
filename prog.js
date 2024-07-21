@@ -17,7 +17,7 @@ function updateJobCompletion() {
 }
 
 function startUpdatingJobs() {
-    setInterval(updateJobCompletion, 1000); 
+    setInterval(updateJobCompletion, 3000); 
 }
 
 // Start the job update process

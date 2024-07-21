@@ -60,12 +60,12 @@ body, html {
     animation: fadeIn 3s forwards;
     font-size: 100px;
     font-family: 'Roboto', sans-serif; 
-    color: rgb(1, 111, 255);
+    color: #dfc117;
     text-shadow: 
-        -1px -1px 0 #fff,  
-        1px -1px 0 #fff,  
-        -1px 1px 0 #fff,  
-        1px 1px 0 #fff;
+        -1px -1px 0 rgb(45, 45, 45),  
+        1px -1px 0 rgb(45, 45, 45),  
+        -1px 1px 0 rgb(45, 45, 45),  
+        1px 1px 0 rgb(45, 45, 45);
 }
 
 @keyframes fadeIn {
